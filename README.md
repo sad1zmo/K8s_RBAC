@@ -20,3 +20,11 @@
 - далее на необходимо получить токены с помощью команды: `kubectl -n test-rbac get secret test-user -o jsonpath="{.data.token}" | base64 --decode`
 - полученный токен необходимо добавить в kubeconfig (в нашем случае нашего пользователя test-user) пример как сдлеать находится в файле config.
 - конфиг файл обычно находится по пути: ~/.kube/config
+
+## Проверка:
+
+```
+kubectl --context sa-context -n test-rbac get sa
+```
+
+- Если все нормально получите список сервис аккаунтов.
